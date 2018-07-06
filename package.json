@@ -1,0 +1,31 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha ./server/test/**/*.test.js --exit",
+    "start": "nodemon ./server/server.js",
+    "test-watch": "nodemon --exec \"npm test\"",
+    "start-callback": "node ./playground/callback.js",
+    "start-promise": "node ./playground/promise.js",
+    "start-mongo": "node ./playground/mongodb.js",
+    "start-mongoose": "node ./playground/mongoose.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.1",
+    "nodemon": "^1.17.5",
+    "validator": "^10.4.0"
+  },
+  "devDependencies": {
+    "expect": "^23.3.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
+  }
+}
