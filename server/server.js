@@ -127,6 +127,25 @@ app.delete('/notes/:id',(req,res)=>{
     })
 })
 
+app.delete('/notes/:title',(req,res)=>{
+    Note.findOneAndRemove(req.params.title)
+    .then((deletedNote) =>{
+        if(!deletedNote){
+            return res.status(404).send();
+        }
+        res.status(200).json({
+            deletedNote:{
+                deletedNote
+            }
+        })
+    })
+    .catch((err) => {
+        res.status(400).json({
+            error: err
+        })
+    })
+})
+
 
 app.listen(50000,()=> 
     console.log('Example app listening on port '+50000)
